@@ -1,0 +1,30 @@
+// import path from "path";
+// import react from "@vitejs/plugin-react";
+// import { defineConfig } from "vite";
+
+// export default defineConfig({
+//   plugins: [react()],
+//   resolve: {
+//     alias: {
+//       "@": path.resolve(__dirname, "./src"),
+//     },
+//   },
+// });
+
+
+
+import path from "path";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    target: "es2022",  // Ensure that the build target supports top-level await
+  },
+});
